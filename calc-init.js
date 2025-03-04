@@ -40,11 +40,10 @@ document.querySelectorAll('.range_slider').forEach(slider => {
 window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.range_slider').forEach(slider => slider.dispatchEvent(new Event('change')));
 });
-</script>
-  
-<!-- Calculator 1 - update on load -->  
-<script>  
-	document.querySelectorAll('.range_slider').forEach(slider => {
+
+
+// Calc - update thumb position on load //
+document.querySelectorAll('.range_slider').forEach(slider => {
     function updateProgress() {
         let percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
         slider.style.setProperty('--progress', percent + '%');
@@ -53,4 +52,5 @@ window.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('input', updateProgress)
     updateProgress();
 });
+
 </script>
