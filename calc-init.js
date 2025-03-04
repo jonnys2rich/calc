@@ -41,16 +41,4 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.range_slider').forEach(slider => slider.dispatchEvent(new Event('change')));
 });
 
-
-// Calc - update thumb position on load //
-document.querySelectorAll('.range_slider').forEach(slider => {
-    function updateProgress() {
-        let percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-        slider.style.setProperty('--progress', percent + '%');
-    }
-
-    slider.addEventListener('input', updateProgress)
-    updateProgress();
-});
-
 </script>
